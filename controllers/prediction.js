@@ -143,9 +143,9 @@ const prediction = async (req, res) => {
         if (timeDifference > 0) {
             // Increase hydroelectricity and nuclear electricity based on how far the date is from today
             const adjustmentFactor = Math.min(timeDifference / 365, 1); // Cap adjustment factor at 1 for large future dates
-            fossilFuel -= adjustmentFactor * 0.075; // Reduce fossil fuel by up to 30% over time
-            hydroelectricity += adjustmentFactor * 0.05; // Increase hydroelectricity proportionally
-            nuclearElectricity += adjustmentFactor * 0.025; // Increase nuclear electricity proportionally
+            fossilFuel -= adjustmentFactor * 0.15; // Reduce fossil fuel by up to 30% over time
+            hydroelectricity += adjustmentFactor * 0.1; // Increase hydroelectricity proportionally
+            nuclearElectricity += adjustmentFactor * 0.05; // Increase nuclear electricity proportionally
         }
 
         // Normalize proportions to ensure they sum to 1
